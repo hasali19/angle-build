@@ -28,7 +28,7 @@ jobs:
           gclient sync
           gn gen out/Release
           echo "is_component_build = false" >> out/Release/args.gn
-          autoninja -C out/Release
+          autoninja -C out/Release libEGL libGLESv2
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
