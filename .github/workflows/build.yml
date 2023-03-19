@@ -27,7 +27,7 @@ jobs:
           cd angle
           gclient sync
           gn gen out/Release
-          echo "is_component_build = false" >> out/Release/args.gn
+          cp ../args.gn out/Release/args.gn
           autoninja -C out/Release libEGL libGLESv2
 
       - name: Upload artifacts
