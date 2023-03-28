@@ -30,7 +30,7 @@ jobs:
           gclient sync
           gn gen out/Release
           cp ../args.gn out/Release/args.gn
-          autoninja -C out/Release libEGL libGLESv2
+          ninja -C out/Release libEGL libGLESv2
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
