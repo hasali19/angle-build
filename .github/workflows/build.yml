@@ -38,10 +38,7 @@ jobs:
           name: angle-win64
           path: |
             angle/include
-            angle/out/Release/libEGL.dll
-            angle/out/Release/libEGL.dll.lib
-            angle/out/Release/libGLESv2.dll
-            angle/out/Release/libGLESv2.dll.lib
+            angle/out/Release
 
   release:
     runs-on: ubuntu-20.04
