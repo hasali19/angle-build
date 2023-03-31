@@ -24,7 +24,7 @@ jobs:
         env:
           DEPOT_TOOLS_WIN_TOOLCHAIN: "0"
         run: |
-          $env:PATH="$env:PATH;$HOME\depot_tools"
+          $env:PATH="$HOME\depot_tools;$env:PATH"
           cp .gclient angle/.gclient
           cd angle
           gclient sync
