@@ -81,6 +81,7 @@ jobs:
 
       - name: Prepare artifacts
         run: |
+          ls -R
           echo "${{ steps.create-git-tag.outputs.COMMIT }}" > angle-win64/COMMIT
           tar -czvf angle-win64.tar.gz angle-win64/*
 
