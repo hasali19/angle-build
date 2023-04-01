@@ -1,5 +1,6 @@
 # Set build arguments here. See `gn help buildargs`.
 is_component_build = false
+is_debug = false
 
 angle_enable_d3d9 = false
 angle_enable_d3d11 = true
