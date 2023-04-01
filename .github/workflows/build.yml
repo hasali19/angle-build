@@ -25,13 +25,15 @@ jobs:
           DEPOT_TOOLS_WIN_TOOLCHAIN: "0"
         run: |
           $env:PATH="$HOME\depot_tools;$env:PATH"
-          cp .gclient angle/.gclient
           cd angle
+
+          cp ../.gclient .
           gclient sync -fD
+
+          mkdir out/Release
+          cp ../args.gn out/Release
           gn gen out/Release
-          cp ../args.gn out/Release/args.gn
-          gn args out/Release --list --short
-          gn args out/Release --list --short > out/Release/args.txt
+
           ninja -C out/Release libEGL libGLESv2
 
       - name: Upload artifacts
