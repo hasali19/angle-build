@@ -42,7 +42,7 @@ jobs:
           cp out/Release/libEGL.dll artifact/bin
           cp out/Release/libGLESv2.dll artifact/bin
           mkdir artifact/lib
-          cp out/Release/libGLESv2.dll artifact/lib
+          cp out/Release/libEGL.dll.lib artifact/lib
           cp out/Release/libGLESv2.dll.lib artifact/lib
 
       - name: Upload artifacts
