@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: angle-win64
-          path: artifact/*
+          path: angle/artifact/*
 
   release:
     runs-on: ubuntu-20.04
