@@ -36,13 +36,20 @@ jobs:
 
           ninja -C out/Release libEGL libGLESv2
 
+          mkdir artifact
+          cp -r include artifact/include
+          mkdir artifact/bin
+          cp out/Release/libEGL.dll artifact/bin
+          cp out/Release/libGLESv2.dll artifact/bin
+          mkdir artifact/lib
+          cp out/Release/libGLESv2.dll artifact/lib
+          cp out/Release/libGLESv2.dll.lib artifact/lib
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: angle-win64
-          path: |
-            angle/include
-            angle/out/Release
+          path: artifact/*
 
   release:
     runs-on: ubuntu-20.04
