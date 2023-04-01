@@ -27,9 +27,11 @@ jobs:
           $env:PATH="$HOME\depot_tools;$env:PATH"
           cp .gclient angle/.gclient
           cd angle
-          gclient sync
+          gclient sync -fD
           gn gen out/Release
           cp ../args.gn out/Release/args.gn
+          gn args out/Release --list --short
+          gn args out/Release --list --short > out/Release/args.txt
           ninja -C out/Release libEGL libGLESv2
 
       - name: Upload artifacts
